@@ -1,3 +1,32 @@
+# Setting Up This Git Repository
+Here are the basic steps to get this Git repository on your local machine so you can work on this project. Anything written in the style %VARIABLE% must be replaced when executing. 
+
+0. Download Git for Windows in some form (if you are using Linux, then Git is already installed). You have two options:
+    * [Git for Windows](https://gitforwindows.org/): This will install the Git BASH terminal, a Unix terminal emulator that you will use for all your Git management.
+    * [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3): This will install PowerShell 7, the most recent form of Windows PowerShell. Then you will need to [install Git using Posh-git](https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-PowerShell)
+
+1. Determine where you want to create the EPiC-2023_competition folder. In your terminal, navigate to your desired directory using the command "cd %PATH%" (replace %PATH% with the directory). You do not need to make a EPiC_2023Chanllenge folder, one will be created by Git.
+
+2. Create your local copy of the Git repository. Once in the desired directory, type "git clone https://github.uconn.edu/lrm22005/EPiC-2023_competition.git" to create the Git repository in a folder at %PATH%/EPiC-2023_competition/. You may have to sign in using your GitHub user. If you have any issues, try running your terminal as an Administrator.
+
+3. Open the EPiC-2023-competition folder in your terminal using the "cd" command. You should see "%PATH%/EPiC-2023_competition [main]>" in your terminal. This means you have the repo downloaded and have currently loaded the Main branch.
+
+4. Create your own branch of the Git repository. Type "git checkout -b %YOURNAME%" to create a branch named %YOURNAME% and open it. This will be your version of the code. You should see "%PATH%/EPiC-2023_competition [%YOURNAME%]>" in your terminal.
+
+5. Push your newly created branch to the remote repository. Type "git add ." to add everything in your current folder (think putting everything in a box), then type "git commit -m "%YOUR COMMIT MESSAGE%"" with your own commit message (think addressing and labeling the box), then type "git push --set-upstream origin %YOURNAME%" to push your branch to remote (think sending the box). Check that the commit pushed properly by refreshing this page and looking for your branch under Branches.
+
+Git will allow us to all work collectively on code and keep versions managed. Please keep your models in the Models folder, your feature extraction in the Features folder, and your prepocessing and cleaning in the Preprocessing folder. Any cleaning or preprocessing should be able to read from raw .mat files. We can discuss standards for features and model formats later.
+
+When using Git, everytime you want to push a change you should use similar steps to 5. above. Type "git add ." to add everything in your current folder, then type "git commit -m "%YOUR COMMIT MESSAGE%"" with your own commit message, then type "git push" to push your branch to remote. When you have any major updates that you would like to share with everyone, please let Luis know and he will merge the code with the Main branch. 
+
+Whenever you would like to download updated code from the Main branch, use the following commands:
+
+    git checkout main
+    git pull 
+    git checkout %YOURNAME%
+    git merge main
+This will switch your local repo to the main branch, download it, switch back to your branch, and then move changes into your branch. It will only update code that has the same file name as what you have in your folder as well as add any new files. It should not modify any code you have that is not in the Main branch. In case of any merge conflicts, you will have to manually determine which code is the most up to data that you want to keep.
+
 # EPiC 2023: The Emotion Physiology and Experience Collaboration
 
 This repository contains data, information, and helpful code for the [EPiC 2023 competition](https://epic-collab.github.io/competition/).
